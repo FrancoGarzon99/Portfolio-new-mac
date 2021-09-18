@@ -15,7 +15,7 @@ const Desktop: React.FC<Props> = ({apps, onOpenApp}) => {
   }
 
   return (
-    <Grid gap={4} gridTemplateColumns="repeat(auto-fill, minmax(92px, 1fr))" padding={4}>
+    <Grid gap={2} gridTemplateColumns="repeat(auto-fill, minmax(92px, 1fr))" padding={4}>
       {apps.map((app) => (
         <Stack
           key={app.id}
@@ -42,7 +42,7 @@ const Desktop: React.FC<Props> = ({apps, onOpenApp}) => {
             }}
             width="100%"
           >
-            <Image margin="auto" maxWidth="64px" src={app.icon} />
+            <Image margin="auto" maxWidth="40px" src={app.icon} />
           </Box>
           <Text
             borderRadius="sm"
