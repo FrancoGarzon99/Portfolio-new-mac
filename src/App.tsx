@@ -2,9 +2,9 @@ import React from "react";
 import {Stack} from "@chakra-ui/react";
 import {Switch, Route, useHistory, useLocation} from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-import Desktop from "./components/Desktop";
-import Window from "./components/Window";
+import Navbar from "./components/NavBar/Navbar";
+import Desktop from "./components/Desktop/Desktop";
+import Window from "./components/Window/Window";
 import {Application} from "./types";
 import {APPS} from "./constants";
 

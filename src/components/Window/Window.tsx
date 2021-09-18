@@ -1,7 +1,7 @@
 import React from "react";
 import {Box} from "@chakra-ui/react";
 
-import HeaderWindow from "./HeaderWindow/HeaderWindow";
+import HeaderWindow from "./HeaderWindow";
 
 interface Props {
   onClose: VoidFunction;

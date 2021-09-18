@@ -35,14 +35,7 @@ const HeaderWindow: React.FC<Props> = ({
       initial={{scale: 0}}
       style={{width: "100%"}}
     >
-      <Stack
-        justifyContent="space-between"
-        spacing={0}
-        onPointerDown={handleDragHandleDown}
-        onPointerEnter={handleDragHandleEnter}
-        onPointerLeave={handleDragHandleLeave}
-        onPointerUp={handleDragHandleUp}
-      >
+      <Stack justifyContent="space-between" spacing={0}>
         <Stack direction="row" position="relative" spacing={0} w="100%">
           <Stack
             backgroundColor="rgba(45, 55, 72, 0.8)"
@@ -74,9 +67,22 @@ const HeaderWindow: React.FC<Props> = ({
             boxShadow="xl"
             w="100%"
           >
-            <Text color="gray.400" flex={1} fontWeight="bold" textAlign="center" userSelect="none">
-              {title}
-            </Text>
+            <Box
+              onPointerDown={handleDragHandleDown}
+              onPointerEnter={handleDragHandleEnter}
+              onPointerLeave={handleDragHandleLeave}
+              onPointerUp={handleDragHandleUp}
+            >
+              <Text
+                color="gray.400"
+                flex={1}
+                fontWeight="bold"
+                textAlign="center"
+                userSelect="none"
+              >
+                {title}
+              </Text>
+            </Box>
             <Box>{children}</Box>
           </Stack>
         </Stack>

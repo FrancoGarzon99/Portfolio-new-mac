@@ -1,7 +1,7 @@
 import React from "react";
 import {Image, Text, Grid, Stack, Box} from "@chakra-ui/react";
 
-import {Application} from "../types";
+import {Application} from "../../types";
 
 interface Props {
   apps: Application[];
