@@ -39,8 +39,8 @@ const HeaderWindow: React.FC<Props> = ({
         <Stack direction="row" position="relative" spacing={0} w="100%">
           <Stack
             backgroundColor="rgba(45, 55, 72, 0.8)"
-            borderColor="gray.600"
-            borderRadius="10px 0px 0px 10px"
+            borderColor="colorPrimary"
+            borderRadius="7px 0px 0px 7px"
             boxShadow="xl"
             p={2}
             w="22%"
@@ -61,9 +61,9 @@ const HeaderWindow: React.FC<Props> = ({
             </Stack>
           </Stack>
           <Stack
-            backgroundColor="gray.700"
+            backgroundColor="colorPrimary"
             borderColor="gray.600"
-            borderRadius="0px 10px 10px 0px"
+            borderRadius="0px 7px 7px 0px"
             boxShadow="xl"
             w="100%"
           >

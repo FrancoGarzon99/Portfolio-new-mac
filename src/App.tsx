@@ -29,7 +29,13 @@ const App: React.FC = () => {
   return (
     <Stack height="100%" position="relative" spacing={0}>
       <Navbar app={selectedApp} />
-      <Stack ref={dragZone} height="100%">
+      <Stack
+        ref={dragZone}
+        alignItems="center"
+        flexDirection="row"
+        height="100%"
+        justifyContent="center"
+      >
         <Desktop apps={APPS} onOpenApp={handleOpenApp} />
         <Switch key={location.pathname} location={location}>
           {APPS.map((app) => (

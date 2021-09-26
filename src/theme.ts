@@ -9,6 +9,10 @@ export default extendTheme({
         color: "white",
         height: "100%",
         overflow: "hidden",
+        fontFamily: "Poppins",
+        padding: 0,
+        margin: 0,
+        boxSizing: "border-box",
       },
       body: {
         backgroundColor: `#EF1678`,
@@ -16,5 +20,12 @@ export default extendTheme({
         backgroundSize: "cover",
       },
     },
+  },
+  colors: {
+    colorPrimary: "#2D3748",
+  },
+  fonts: {
+    fontPrimary: "Poppins",
+    fontSecondary: "Roboto",
   },
 });

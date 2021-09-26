@@ -32,7 +32,7 @@ const Window: React.FC<Props> = ({onClose, dragConstraints, title, children}) =>
   }
 
   return (
-    <Box maxWidth={{base: "90vw", md: 900}}>
+    <Box left="20px" maxWidth={{base: "90vw", md: 900}} position="absolute" top="40px" width="100%">
       <HeaderWindow
         // eslint-disable-next-line react/no-children-prop
         children={children}
