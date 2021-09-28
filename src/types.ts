@@ -11,6 +11,7 @@ export interface Application {
   icon: string;
   name: string;
   label?: string;
+  description ?:string;
   actions: ApplicationAction[];
   component: React.FC<any>;
 }
