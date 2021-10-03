@@ -1,13 +1,17 @@
-import React from "react";
+import React, {Dispatch, SetStateAction} from "react";
 import {Image, Text, Stack, Link, Box} from "@chakra-ui/react";
 
 import {Application} from "../../types";
 
+import MenuNavbar from "./MenuNavbar/MenuNavbar";
+
 interface Props {
   app?: Application;
+  setGridDesktopLayout: Dispatch<SetStateAction<string>>;
+  gridDesktopLayout: string;
 }
 
-const Navbar: React.FC<Props> = ({app}) => {
+const Navbar: React.FC<Props> = ({app, setGridDesktopLayout, gridDesktopLayout}) => {
   const hasFullScreenSupport: boolean = React.useMemo(
     () => Boolean(document.documentElement.requestFullscreen),
     [],
@@ -33,7 +37,10 @@ const Navbar: React.FC<Props> = ({app}) => {
           overflowX="auto"
           spacing={6}
         >
-          <Image src="https://icongr.am/material/apple.svg?size=20&color=ffffff" />
+          <MenuNavbar
+            gridDesktopLayout={gridDesktopLayout}
+            setGridDesktopLayout={setGridDesktopLayout}
+          />
           {app && (
             <>
               <Text fontSize="sm" fontWeight="bold" userSelect="none">

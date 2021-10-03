@@ -11,7 +11,18 @@ export interface Application {
   icon: string;
   name: string;
   label?: string;
-  description ?:string;
+  description?: string;
   actions: ApplicationAction[];
   component: React.FC<any>;
+}
+export interface IconsContact {
+  id: string;
+  link: string;
+  iconComponent: React.FC<any>;
+  isExternal?: boolean;
+}
+
+export interface IconsProps {
+  h?: string | number;
+  w?: string | number;
 }

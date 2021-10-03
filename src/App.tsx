@@ -1,14 +1,16 @@
-import React from "react";
-import {Stack} from "@chakra-ui/react";
+import React, {useState} from "react";
+import {Stack, Box, Center, Link} from "@chakra-ui/react";
 import {Switch, Route, useHistory, useLocation} from "react-router-dom";
 
 import Navbar from "./components/NavBar/Navbar";
 import Desktop from "./components/Desktop/Desktop";
 import Window from "./components/Window/Window";
 import {Application} from "./types";
-import {APPS} from "./constants";
+import {APPS, IconstContact} from "./constants";
 
 const App: React.FC = () => {
+  const [gridDesktopLayout, setGridDesktopLayout] = useState("cards");
+
   const location = useLocation();
   const history = useHistory();
   const dragZone = React.useRef(null);
@@ -28,15 +30,19 @@ const App: React.FC = () => {
 
   return (
     <Stack height="100%" position="relative" spacing={0}>
-      <Navbar app={selectedApp} />
+      <Navbar
+        app={selectedApp}
+        gridDesktopLayout={gridDesktopLayout}
+        setGridDesktopLayout={setGridDesktopLayout}
+      />
       <Stack
         ref={dragZone}
-        alignItems="center"
-        flexDirection="row"
+        alignItems={gridDesktopLayout === "cards" ? "center" : "initial"}
+        flexDirection={gridDesktopLayout === "cards" ? "row" : "column"}
         height="100%"
-        justifyContent="center"
+        justifyContent={gridDesktopLayout === "cards" ? "center" : "flex-start"}
       >
-        <Desktop apps={APPS} onOpenApp={handleOpenApp} />
+        <Desktop apps={APPS} gridDesktopLayout={gridDesktopLayout} onOpenApp={handleOpenApp} />
         <Switch key={location.pathname} location={location}>
           {APPS.map((app) => (
             <Route
@@ -58,6 +64,24 @@ const App: React.FC = () => {
           ))}
         </Switch>
       </Stack>
+      <Box h="70px">
+        <Center>
+          <Stack direction="row" spacing={2}>
+            {IconstContact.map((icon) => (
+              <Link
+                key={icon.id}
+                _hover={{textDecoration: "none"}}
+                fontSize="sm"
+                fontWeight="500"
+                href={icon.link}
+                isExternal={icon.isExternal}
+              >
+                {React.createElement(icon.iconComponent)}
+              </Link>
+            ))}
+          </Stack>
+        </Center>
+      </Box>
     </Stack>
   );
 };

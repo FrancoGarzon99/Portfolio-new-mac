@@ -1,61 +1,52 @@
 import React from "react";
-import {Image, Text, Grid, Stack, Box} from "@chakra-ui/react";
+import {Grid, Box, Center} from "@chakra-ui/react";
 
 import {Application} from "../../types";
-
+import CardsDesktop from "../Cards/CardsDesktop";
+import CardList from "../Cards/CardList";
 interface Props {
   apps: Application[];
   onOpenApp: (app: Application) => void;
+  gridDesktopLayout: string;
 }
 
-const Desktop: React.FC<Props> = ({apps, onOpenApp}) => {
+const Desktop: React.FC<Props> = ({apps, onOpenApp, gridDesktopLayout}) => {
   function handleOpenApp(app: Application, element: HTMLDivElement) {
     onOpenApp(app);
     element.focus();
   }
 
   return (
-    <Grid gap={2} gridTemplateColumns="repeat(auto-fill, minmax(400px, 1fr))" padding={4}>
-      {apps.map((app) => (
-        <Stack
-          key={app.id}
-          alignItems="flex-start"
-          bgColor="colorPrimary"
-          borderRadius="15px"
-          className="container"
-          cursor="pointer"
-          h="80px"
-          justify="center"
-          padding={1}
-          shadow="0px 5px 10px 2px #00000040"
-          spacing={1}
-          tabIndex={0}
-          userSelect="none"
-          onDoubleClick={(e) => handleOpenApp(app, e.currentTarget)}
-          onKeyPress={(e) =>
-            ["Enter", "Space"].includes(e.code) && handleOpenApp(app, e.currentTarget)
-          }
-          onTouchStart={(e) => handleOpenApp(app, e.currentTarget)}
-        >
-          <Box
-            borderRadius="sm"
-            padding={3}
-            pl="28px"
-            sx={{
-              ".container:focus &": {
-                backgroundColor: "colorPrimary",
-              },
-            }}
-            w="100%"
-          >
-            <Text fontSize="20px">{app.name}</Text>
-            <Text fontFamily="fontSecondary" fontSize="11px" fontWeight="300">
-              {app.description}
-            </Text>
-          </Box>
-        </Stack>
-      ))}
-    </Grid>
+    <Box>
+      {gridDesktopLayout === "cards" ? (
+        <Box>
+          <Center>
+            <Box>
+              <Box
+                bgImage={"url(/profile.jpg)"}
+                bgPos="center"
+                bgRepeat="no-repeat"
+                bgSize="cover"
+                borderRadius="50%"
+                h="220px"
+                w="220px"
+              />
+            </Box>
+          </Center>
+          <Grid gap={2} gridTemplateColumns="repeat(auto-fill, minmax(400px, 1fr))" padding={4}>
+            {apps.map((app) => (
+              <CardList key={app.id} app={app} handleOpenApp={handleOpenApp} />
+            ))}
+          </Grid>
+        </Box>
+      ) : (
+        <Grid gap={4} gridTemplateColumns="repeat(auto-fill, minmax(92px, 1fr))">
+          {apps.map((app) => (
+            <CardsDesktop key={app.id} app={app} handleOpenApp={handleOpenApp} />
+          ))}
+        </Grid>
+      )}
+    </Box>
   );
 };
 
