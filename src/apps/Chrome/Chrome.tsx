@@ -26,17 +26,7 @@ const Chrome: React.FC<Props> = () => {
       color="gray.700"
       padding={4}
     >
-      <Stack
-        backgroundColor="white"
-        borderColor="gray.100"
-        borderRadius="lg"
-        borderWidth={1}
-        boxShadow="xl"
-        padding={4}
-        spacing={6}
-      >
-        {sections.map((section) => React.createElement(SECTIONS[section], {key: section}))}
-      </Stack>
+    Hola
     </Box>
   );
 };

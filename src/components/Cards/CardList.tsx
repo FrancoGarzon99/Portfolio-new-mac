@@ -16,7 +16,7 @@ const CardList: React.FC<Props> = ({app, handleOpenApp}) => {
       borderRadius="15px"
       className="container"
       cursor="pointer"
-      h="80px"
+      h="4.7rem"
       justify="center"
       padding={1}
       shadow="0px 5px 10px 2px #00000040"
@@ -30,7 +30,7 @@ const CardList: React.FC<Props> = ({app, handleOpenApp}) => {
       <Box
         borderRadius="sm"
         padding={3}
-        pl="28px"
+        pl="20px"
         sx={{
           ".container:focus &": {
             backgroundColor: "colorPrimary",
@@ -38,8 +38,8 @@ const CardList: React.FC<Props> = ({app, handleOpenApp}) => {
         }}
         w="100%"
       >
-        <Text fontSize="20px">{app.name}</Text>
-        <Text fontFamily="fontSecondary" fontSize="12px" fontWeight="300">
+        <Text fontSize="1.3rem">{app.name}</Text>
+        <Text fontFamily="fontSecondary" fontSize="0.6rem" fontWeight="300">
           {app.description}
         </Text>
       </Box>

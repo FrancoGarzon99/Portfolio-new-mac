@@ -28,8 +28,8 @@ const Desktop: React.FC<Props> = ({apps, onOpenApp, gridDesktopLayout}) => {
                 bgRepeat="no-repeat"
                 bgSize="cover"
                 borderRadius="50%"
-                h="220px"
-                w="220px"
+                h="11rem"
+                w="11rem"
               />
             </Box>
           </Center>

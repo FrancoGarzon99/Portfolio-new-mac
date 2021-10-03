@@ -64,7 +64,7 @@ const App: React.FC = () => {
           ))}
         </Switch>
       </Stack>
-      <Box h="70px">
+      <Box h="54px">
         <Center>
           <Stack direction="row" spacing={2}>
             {IconstContact.map((icon) => (
