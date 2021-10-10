@@ -8,7 +8,7 @@ interface Props {
 
 const MenuNavbar: React.FC<Props> = ({setGridDesktopLayout, gridDesktopLayout}) => {
   return (
-    <Menu isLazy closeOnSelect={false}>
+    <Menu closeOnSelect={false}>
       <MenuButton>
         <Image src="https://icongr.am/material/apple.svg?size=20&color=ffffff" />
       </MenuButton>

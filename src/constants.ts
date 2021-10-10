@@ -1,8 +1,10 @@
 import {Application, IconsContact} from "./types";
-import txtIcon from "./assets/icons/txt.png";
 import finderIcon from "./assets/icons/finder.png";
 import vscodeIcon from "./assets/icons/vscode.png";
 import chromeIcon from "./assets/icons/chrome.png";
+import archiverIcon from "./assets/icons/archiver.png";
+import htmlIcon from "./assets/icons/html-editor.png";
+import contactIcon from "./assets/icons/contact.png";
 import FinderApp from "./apps/Finder";
 import ChromeApp from "./apps/Chrome";
 import ReadmeApp from "./apps/Readme";
@@ -16,7 +18,7 @@ import LinkedinIcon from "./Icons/LinkedinIcon";
 export const APPS: Application[] = [
   {
     id: "sobremi",
-    icon: vscodeIcon,
+    icon: contactIcon,
     component: VsCodeApp,
     name: "Sobre Mí",
     description: "Te cuento un poco sobre mí",
@@ -42,7 +44,7 @@ export const APPS: Application[] = [
   {
     id: "educacion",
     component: ReadmeApp,
-    icon: txtIcon,
+    icon: archiverIcon,
     name: "Educación",
     label: "",
     description: "Los aprendido este ultimo tiempo",
@@ -51,7 +53,7 @@ export const APPS: Application[] = [
   {
     id: "experiencia",
     component: ReadmeApp,
-    icon: txtIcon,
+    icon: htmlIcon,
     name: "Experiencia",
     label: "",
     description: " Mi experiencia en proyectos como Front-end Jr",
