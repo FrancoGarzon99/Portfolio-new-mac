@@ -1,32 +1,57 @@
-import React, {Dispatch, SetStateAction} from "react";
-import {Menu, MenuButton, MenuList, Image, MenuOptionGroup, MenuItemOption} from "@chakra-ui/react";
+import React, {Dispatch, SetStateAction, useRef} from "react";
+import {
+  Image,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverCloseButton,
+  Button,
+  Portal,
+  Stack,
+} from "@chakra-ui/react";
 
 interface Props {
   setGridDesktopLayout: Dispatch<SetStateAction<string>>;
-  gridDesktopLayout: string;
+  gridDesktopLayout?: string;
 }
 
-const MenuNavbar: React.FC<Props> = ({setGridDesktopLayout, gridDesktopLayout}) => {
+const MenuNavbar: React.FC<Props> = ({setGridDesktopLayout}) => {
+  const initialFocusRef = useRef<any | undefined | null>(null);
+
   return (
-    <Menu closeOnSelect={false}>
-      <MenuButton>
+    <Popover closeOnBlur={false} initialFocusRef={initialFocusRef} placement="bottom-end">
+      <PopoverTrigger>
         <Image src="https://icongr.am/material/apple.svg?size=20&color=ffffff" />
-      </MenuButton>
-      <MenuList _focus={{bg: "colorPrimary"}} bg="colorPrimary" borderColor="colorPrimary">
-        <MenuOptionGroup
-          defaultValue={gridDesktopLayout}
-          type="radio"
-          onChange={(e) => setGridDesktopLayout(e as string)}
-        >
-          <MenuItemOption _focus={{bg: "gray.600"}} _hover={{bg: "gray.600"}} value="desktop">
-            Desktop
-          </MenuItemOption>
-          <MenuItemOption _focus={{bg: "gray.600"}} _hover={{bg: "gray.600"}} value="cards">
-            List
-          </MenuItemOption>
-        </MenuOptionGroup>
-      </MenuList>
-    </Menu>
+      </PopoverTrigger>
+      <Portal>
+        <PopoverContent bg="colorPrimary" borderColor="colorPrimary">
+          <PopoverHeader border="0" fontWeight="bold" pt={2}>
+            Layout
+          </PopoverHeader>
+          <PopoverBody p={4}>
+            <Stack spacing={4}>
+              <Button
+                _hover={{bg: "gray.600"}}
+                bg="gray.500"
+                onClick={() => setGridDesktopLayout("desktop")}
+              >
+                Desktop
+              </Button>
+              <Button
+                ref={initialFocusRef}
+                _hover={{bg: "gray.600"}}
+                bg="gray.500"
+                onClick={() => setGridDesktopLayout("cards")}
+              >
+                List
+              </Button>
+            </Stack>
+          </PopoverBody>
+        </PopoverContent>
+      </Portal>
+    </Popover>
   );
 };
 
