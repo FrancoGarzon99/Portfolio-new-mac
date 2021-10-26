@@ -6,12 +6,7 @@ interface Props {
 }
 
 const Finder: React.FC<Props> = () => {
-  return (
-    <Text padding={2}>
-      Here you will find my contact information, not ready yet but you can check the links on the
-      navbar 👆
-    </Text>
-  );
+  return <Text padding={2}>Portfolio in process!</Text>;
 };
 
 export default Finder;

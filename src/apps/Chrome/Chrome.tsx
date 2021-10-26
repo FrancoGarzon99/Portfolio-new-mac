@@ -21,12 +21,8 @@ const Chrome: React.FC<Props> = () => {
   const sections: Section[] = ["image", "title", "contact"];
 
   return (
-    <Box
-      borderBottomRadius="md"
-      color="gray.700"
-      padding={4}
-    >
-    Hola
+    <Box borderBottomRadius="md" color="gray.700" padding={4}>
+      Hola
     </Box>
   );
 };

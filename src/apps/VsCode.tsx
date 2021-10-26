@@ -6,12 +6,7 @@ interface Props {
 }
 
 const VsCode: React.FC<Props> = () => {
-  return (
-    <Text padding={2}>
-      Here you will find the code for cv.html and you will be able to play around with its code. Not
-      ready yet 😞
-    </Text>
-  );
+  return <Text padding={2}>In process</Text>;
 };
 
 export default VsCode;
