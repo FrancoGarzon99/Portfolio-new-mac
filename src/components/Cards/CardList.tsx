@@ -36,7 +36,7 @@ const CardList: React.FC<Props> = ({app, handleOpenApp}) => {
       >
         <Box borderRadius="sm" padding={3} pl="20px" w="100%">
           <Text fontSize="1.3rem">{app.name}</Text>
-          <Text fontFamily="fontSecondary" fontSize="0.6rem" fontWeight="300">
+          <Text fontFamily="fontSecondary" fontSize="0.8rem" fontWeight="300">
             {app.description}
           </Text>
         </Box>

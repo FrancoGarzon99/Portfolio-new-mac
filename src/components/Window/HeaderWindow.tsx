@@ -59,6 +59,23 @@ const HeaderWindow: React.FC<Props> = ({
               <Box backgroundColor="yellow.400" borderRadius={9999} height={3} width={3} />
               <Box backgroundColor="green.400" borderRadius={9999} height={3} width={3} />
             </Stack>
+            <Box pl={1} pt={6}>
+              <Text>Shoutcuts</Text>
+            </Box>
+            <Stack pl={4} py={4} spacing={6}>
+              <Box cursor={"pointer"}>
+                <Text>Sobre Mí</Text>
+              </Box>
+              <Box cursor={"pointer"}>
+                <Text>Experiencia</Text>
+              </Box>
+              <Box cursor={"pointer"}>
+                <Text>Educación</Text>
+              </Box>
+              <Box cursor={"pointer"}>
+                <Text>Habilidades</Text>
+              </Box>
+            </Stack>
           </Stack>
           <Stack
             backgroundColor="colorPrimary"
@@ -68,6 +85,7 @@ const HeaderWindow: React.FC<Props> = ({
             w="100%"
           >
             <Box
+              p={2}
               onPointerDown={handleDragHandleDown}
               onPointerEnter={handleDragHandleEnter}
               onPointerLeave={handleDragHandleLeave}
@@ -77,6 +95,7 @@ const HeaderWindow: React.FC<Props> = ({
                 color="gray.400"
                 flex={1}
                 fontWeight="bold"
+                p={2}
                 textAlign="center"
                 userSelect="none"
               >

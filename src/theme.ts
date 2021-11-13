@@ -24,7 +24,7 @@ export default extendTheme({
         margin: 0,
         boxSizing: "border-box",
         fontSize: {
-          xs: "13px",
+          xl: "13px",
           xxl: "14px",
         },
       },
@@ -37,6 +37,7 @@ export default extendTheme({
   },
   colors: {
     colorPrimary: "#2D3748",
+    colorCardPrimary: "#4B586F",
   },
   fonts: {
     fontPrimary: "Poppins",

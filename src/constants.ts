@@ -1,25 +1,25 @@
 import {Application, IconsContact} from "./types";
 import finderIcon from "./assets/icons/finder.png";
 import vscodeIcon from "./assets/icons/vscode.png";
-import chromeIcon from "./assets/icons/chrome.png";
 import archiverIcon from "./assets/icons/archiver.png";
 import htmlIcon from "./assets/icons/html-editor.png";
 import contactIcon from "./assets/icons/contact.png";
-import FinderApp from "./apps/Finder";
-import ChromeApp from "./apps/Chrome";
-import ReadmeApp from "./apps/Readme";
-import VsCodeApp from "./apps/VsCode";
+import Contact from "./apps/Contact";
+import Experience from "./apps/Chrome";
+import Education from "./apps/Education";
+import Abilities from "./apps/Abilities";
 import FacebookIcon from "./Icons/FacebookIcon";
 import InstagramIcon from "./Icons/InstagramIcon";
 import GithubIcon from "./Icons/GithubIcon";
 import GmailIcon from "./Icons/GmailIcon";
 import LinkedinIcon from "./Icons/LinkedinIcon";
+import About from "./apps/About";
 
 export const APPS: Application[] = [
   {
     id: "sobremi",
     icon: contactIcon,
-    component: VsCodeApp,
+    component: About,
     name: "Sobre Mí",
     description: "Te cuento un poco sobre mí",
     actions: [],
@@ -27,23 +27,23 @@ export const APPS: Application[] = [
   {
     id: "habilidades",
     icon: vscodeIcon,
-    component: VsCodeApp,
+    component: Abilities,
     name: "Habilidades",
     description: "Lenguajes que se utilizar",
     actions: [],
   },
   {
-    id: "proyectos",
-    icon: chromeIcon,
-    component: ChromeApp,
-    name: "Proyectos",
+    id: "experiencia",
+    icon: htmlIcon,
+    component: Experience,
+    name: "Experiencia",
     label: "",
-    description: "Algunos de mis actuales trabajos",
+    description: "Mi experiencia en algunos de mis actuales trabajos",
     actions: [],
   },
   {
     id: "educacion",
-    component: ReadmeApp,
+    component: Education,
     icon: archiverIcon,
     name: "Educación",
     label: "",
@@ -51,19 +51,10 @@ export const APPS: Application[] = [
     actions: [],
   },
   {
-    id: "experiencia",
-    component: ReadmeApp,
-    icon: htmlIcon,
-    name: "Experiencia",
-    label: "",
-    description: " Mi experiencia en proyectos como Front-end Jr",
-    actions: [],
-  },
-  {
     id: "contactame",
     icon: finderIcon,
     name: "Contactame",
-    component: FinderApp,
+    component: Contact,
     description: "¿Quieres contactarme?",
     actions: [
       {
@@ -77,7 +68,7 @@ export const APPS: Application[] = [
         isExternal: true,
       },
       {
-        name: "LinkedIN",
+        name: "LinkedIn",
         link: "https://www.linkedin.com/in/franco-garz%C3%B3n99/",
         isExternal: true,
       },
